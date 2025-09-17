@@ -9,21 +9,29 @@ import java.time.LocalDate;
  * @author user
  */
 public class Empleado {
+    private static int contadorEmpleados = 1;
     private int idEmpleado;
     private String nombre;
     private String apellido;
-    private int documento;
+    private String documento;
     private LocalDate fechaVinculacion;
     private LocalDate fechaIngreso;
     private String tipo_empleado;
     private double salario;
 
     public Empleado() {
-        
+        this.idEmpleado = Empleado.contadorEmpleados; 
+        this.nombre = "";
+        this.apellido = "";        
+        this.documento = "";
+        this.fechaVinculacion = null;
+        this.fechaIngreso = null;
+        this.tipo_empleado = "";
+        this.salario = 0;
+        contadorEmpleados++;
     }
     
-    public Empleado(int idEmpleado, String nombre, String apellido, int documento, LocalDate fechaVinculacion, LocalDate fechaIngreso, String tipo_empleado, double salario) {
-        this.idEmpleado = idEmpleado;
+    public Empleado(int idEmpleado, String nombre, String apellido, String documento, LocalDate fechaVinculacion, LocalDate fechaIngreso, String tipo_empleado, double salario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
@@ -57,11 +65,11 @@ public class Empleado {
         this.apellido = apellido;
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
@@ -96,5 +104,17 @@ public class Empleado {
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+    
+    @Override
+    public String toString(){
+        return "EMPLEADO " + idEmpleado + "\n" +
+               "Nombre: " + nombre + "\n" +
+               "Apellido: " + apellido + "\n" +
+               "Documento: " + documento + "\n" +
+               "Fecha vinculacion: " + fechaVinculacion + "\n" +
+               "Fecha ingreso: " + fechaIngreso + "\n" +
+               "Tipo empleado: " + tipo_empleado+ "\n" +
+               "Salario: " + salario + "\n";
     }
 }

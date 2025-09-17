@@ -16,7 +16,7 @@ public class Permanente extends Empleado{
     public Permanente() {
     }
 
-    public Permanente(String planBeneficios, int idEmpleado, String nombre, String apellido, int documento, LocalDate fechaVinculacion, LocalDate fechaIngreso, String tipo_empleado, double salario) {
+    public Permanente(String planBeneficios, int idEmpleado, String nombre, String apellido, String documento, LocalDate fechaVinculacion, LocalDate fechaIngreso, String tipo_empleado, double salario) {
         super(idEmpleado, nombre, apellido, documento, fechaVinculacion, fechaIngreso, tipo_empleado, salario);
         this.planBeneficios = planBeneficios;
     }
